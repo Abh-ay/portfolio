@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function Map123() {
+        var mapOptions = {
+          center: new google.maps.LatLng(51.508742, -0.12085),
+          zoom: 10,
+          mapTypeId: "roadmap",
+        };
+        var map = new google.maps.Map(
+          document.getElementById("map"),
+          mapOptions
+        );
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrnf-DSGpzUKiExrz2TCZDQl5IAjjCSEc&callback=Map123"></script>
+  </head>
+  <body>
+    <div id="map" style="width: 150px; height: 150px; background: green"></div>
+  </body>
+</html>
