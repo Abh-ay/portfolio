@@ -4,7 +4,7 @@ from django.contrib import messages
 
 from django.http import HttpResponseRedirect
 from .forms import ContactForm
-from .models import Profile, Projects, Skills, Work, Education
+from .models import Profile, Projects, Skills, Work, Education,CvURL
 from django.views.decorators.csrf import csrf_exempt
 from django.http import StreamingHttpResponse
 from wsgiref.util import FileWrapper
@@ -19,7 +19,9 @@ def portView(request):
     projects = Projects.objects.all()
     skills = Skills.objects.all()
     cf = ContactForm()
-    return render(request, 'index.html', {'profile': profile, 'work': work, 'education': education, 'projects': projects, 'skills': skills, 'cf': cf})
+    link=CvURL.objects.all()
+    
+    return render(request, 'index.html', {'profile': profile, 'work': work, 'education': education, 'projects': projects, 'skills': skills, 'cf': cf,'link':link[0].url})
 
 
 def download_file(request):
@@ -43,6 +45,8 @@ def contact(request):
     education = Education.objects.all()
     projects = Projects.objects.all()
     skills = Skills.objects.all()
+    link=CvURL.objects.all()
+    
     print(request)
     print(request.method)
     if request.method == 'POST':
@@ -53,4 +57,4 @@ def contact(request):
             return HttpResponseRedirect('/')
     else:
         cf = ContactForm()
-    return render(request, 'index.html', {'profile': profile, 'work': work, 'education': education, 'projects': projects, 'skills': skills, 'cf': cf})
+    return render(request, 'index.html', {'profile': profile, 'work': work, 'education': education, 'projects': projects, 'skills': skills, 'cf': cf,'link':link[0].url})

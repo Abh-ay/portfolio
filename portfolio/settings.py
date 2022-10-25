@@ -30,7 +30,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool, default=True)
 # DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ["abhay-portfolio.herokuapp.com"]
+ALLOWED_HOSTS = ["abhay-portfolio.herokuapp.com","127.0.0.1",'.vercel.app', '.now.sh']
 
 
 # Application definition

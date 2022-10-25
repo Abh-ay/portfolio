@@ -43,3 +43,6 @@ class Contact(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     message = models.CharField(max_length=500)
+
+class CvURL(models.Model):
+    url=models.CharField(max_length=500)
