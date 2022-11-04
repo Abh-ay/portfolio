@@ -15,7 +15,7 @@ class Work(models.Model):
     company = models.CharField(max_length=100)
     From = models.DateField()
     to = models.DateField()
-    description = models.CharField(max_length=250)
+    description = models.CharField(max_length=1200)
 
 
 class Education(models.Model):
