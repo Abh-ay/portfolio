@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contact, CvURL, Profile, Education, Projects, Skills, Work,CvURL
+from .models import Contact, CvURL, Profile, Education, Projects, Skills, Work
 
 admin.site.register(Profile)
 
